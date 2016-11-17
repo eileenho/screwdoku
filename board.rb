@@ -50,7 +50,14 @@ class Board
     grid.size
   end
 
-  alias_method :rows, :size
+  # alias_method :rows, :size
+  def rows
+    rows = []
+    @grid.each do |element|
+      rows << element
+    end
+    rows
+  end
 
   def solved?
     rows.all? { |row| solved_set?(row) } &&
