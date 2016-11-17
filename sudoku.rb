@@ -28,7 +28,7 @@ class SudokuGame
     pos
   end
 
-  def get_val
+  def get_value
     val = nil
     until val && valid_val?(val)
       puts "Please enter a value between 1 and 9 (0 to clear the tile)"
@@ -36,10 +36,6 @@ class SudokuGame
       val = parse_val(gets.chomp)
     end
     val
-  end
-
-  def parse_pos(string)
-    string.split(",").map { |char| Integer(char) }
   end
 
   def parse_val(string)
